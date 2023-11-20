@@ -316,12 +316,12 @@
 
     <div style="width: 48%;">
         <p for="paymentMethod">Payment:</p>
-        <select id="paymentMethod" name="Payment&nbsp;Method" onchange="redirectToPayment()">
+        <select id="paymentMethod" name="Payment Method" onchange="redirectToPayment()">
             <option value=""></option>
             <option value="venmo">Venmo</option>
             <option value="zelle">Zelle</option>
             <option value="FFAPay">FFA Pay</option>
-        </select><br>
+        </select><br>        
     </div>
 
     <div style="width: 48%;">
@@ -338,16 +338,20 @@
         switch (selectedOption) {
             case "venmo":
                 window.open("https://venmo.com/", "_blank");
-                break;            
+                break;
             case "zelle":
                 window.open("https://www.zellepay.com/", "_blank");
                 break;
-            case "FFAPay-Credit Cards":
+            case "FFAPay":
                 window.open("https://pay.filipinofederationofamerica.org/Multiple", "_blank");
+                break;
+            default:
+                // Handle default case or do nothing
                 break;
         }
     }
 </script>
+
 
 <!-- Inside the form, after the payment section -->
 
@@ -387,22 +391,6 @@
             // You can perform additional checks or actions here if needed
         }
     });
-</script>
-
-
-
-
-
-
-<script>
-    function validateForm() {
-        var agreementCheckbox = document.getElementById('agreement');
-        if (!agreementCheckbox.checked) {
-            document.getElementById('errorMessage').innerText = 'Please agree to the terms.';
-            return false;
-        }
-        // Additional validation or form submission logic if needed
-    }
 </script>
 
 <button id="printButton" onclick="window.print()">Print</button>
