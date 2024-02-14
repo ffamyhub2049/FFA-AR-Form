@@ -282,7 +282,7 @@
     </div>
 
     <div style="margin: 10px; display: flex; align-items: center;">
-        <label for="applicationFees">Application-$30</label>
+        <label for="applicationFees">Application-$50</label>
         <input type="radio" id="applicationFees" value="applicationFees" name="Option" onchange="calculateTotal()">
     </div>
 
@@ -318,8 +318,7 @@
         <p for="paymentMethod">Payment:</p>
         <select id="paymentMethod" name="Payment Method" onchange="redirectToPayment()">
             <option value=""></option>
-            <option value="venmo">Venmo</option>
-            <option value="zelle">Zelle</option>
+            <option value="Check">Mail-Check</option>
             <option value="FFAPay">FFA Pay</option>
         </select><br>        
     </div>
@@ -336,13 +335,7 @@
         var selectedOption = select.options[select.selectedIndex].value;
 
         switch (selectedOption) {
-            case "venmo":
-                window.open("https://venmo.com/", "_blank");
-                break;
-            case "zelle":
-                window.open("https://www.zellepay.com/", "_blank");
-                break;
-            case "FFAPay":
+                case "FFAPay":
                 window.open("https://pay.filipinofederationofamerica.org/Multiple", "_blank");
                 break;
             default:
